@@ -2,6 +2,7 @@ const express = require("express");
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 hbs.registerPartials(`${__dirname}/views/partials`);
@@ -35,6 +36,6 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-app.listen(3000, () => {
-  console.log("This application is running on port localhost:3000");
+app.listen(port, () => {
+  console.log(`This application is running on port ${port}`);
 });
