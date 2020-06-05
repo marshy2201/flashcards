@@ -1,0 +1,18 @@
+<section class="namecard">
+  <div class="namecard-hello">
+    {{#if name}}
+      <p class="namecard-greeting">Welcome, {{name}}!</p>
+      <form action="/goodbye" method="POST" class="namecard-exit">
+        <button type="submit"><img src="/static/img/close.svg"></button>
+      </form>
+    {{else}}
+      <p class="namecard-greeting">Hello, Student!</p>
+    {{/if}}
+  </div>
+  {{#unless id}}
+    {{> @partial-block }}
+  {{/unless}}   
+</section>
+{{#if id}}
+  {{> @partial-block }}
+{{/if}}
